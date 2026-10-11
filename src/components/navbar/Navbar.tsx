@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -91,7 +90,9 @@ export const Navbar = () => {
           {/* Mobile menu toggle */}
           <button
             type="button"
-            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              isOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsOpen((prev) => !prev)}
