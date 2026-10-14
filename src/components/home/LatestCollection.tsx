@@ -14,7 +14,7 @@ export const LatestCollection = () => {
       <div className="my-10">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {dummyLatestCollections.map((product) => (
-            <ProductCard key={product.id}/>
+            <ProductCard product={product} key={product.id}/>
           ))}
         </div>
       </div>
