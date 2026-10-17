@@ -18,7 +18,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     <div className="group overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       {/* Image */}
       <Link href={`/products/${product.id}`}>
-        <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+        <div className="relative aspect-4/5 overflow-hidden bg-surface">
           <Image
             src={product.image}
             alt={product.name}
@@ -38,7 +38,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         </Link>
 
         <p className="mt-2 text-lg font-semibold text-gray-900">
-          ₹{product.price.toLocaleString("en-IN")}
+          ${product.price.toLocaleString("en-IN")}
         </p>
       </div>
     </div>
