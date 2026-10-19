@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import BreadCrumb from "../ui/BreadCrumbs";
+import Button from "../ui/Button";
 
 const images = [
   "/images/gallery1.png",
@@ -30,7 +31,14 @@ export default function ProductPageComponent() {
     setAddedToCart(true);
     window.setTimeout(() => setAddedToCart(false), 2500);
 
-    // Connect your actual cart functionality here.
+    <Button
+      fullWidth
+      paddingX="px-6"
+      onClick={handleAddToCart}
+      className="min-h-14 rounded-xl py-4 text-sm font-semibold"
+    >
+      {addedToCart ? "Added Successfully ✓" : "Add to Cart"}
+    </Button>;
   };
 
   return (
@@ -121,9 +129,7 @@ export default function ProductPageComponent() {
 
             {/* Price */}
             <div className="mt-6 flex items-baseline gap-3">
-              <p className="text-2xl font-semibold tracking-tight">
-                ₹999
-              </p>
+              <p className="text-2xl font-semibold tracking-tight">₹999</p>
               <span className="text-sm text-muted-foreground">
                 Inclusive of taxes
               </span>
@@ -132,10 +138,9 @@ export default function ProductPageComponent() {
             <div className="my-7 border-t border-border" />
 
             <p className="text-sm leading-7 text-muted-foreground">
-              A timeless wardrobe essential designed to fit effortlessly
-              into your everyday style. Pair it with your favorite denim,
-              layer it for cooler days, or keep it simple for a clean,
-              understated look.
+              A timeless wardrobe essential designed to fit effortlessly into
+              your everyday style. Pair it with your favorite denim, layer it
+              for cooler days, or keep it simple for a clean, understated look.
             </p>
 
             {/* Colors */}
@@ -183,7 +188,7 @@ export default function ProductPageComponent() {
                   type="button"
                   onClick={() =>
                     window.alert(
-                      "Please add your actual size chart before using this feature."
+                      "Please add your actual size chart before using this feature.",
                     )
                   }
                   className="text-xs font-medium text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
@@ -272,9 +277,7 @@ export default function ProductPageComponent() {
                   ↗
                 </span>
                 <div>
-                  <p className="text-sm font-medium">
-                    Delivery information
-                  </p>
+                  <p className="text-sm font-medium">Delivery information</p>
                   <p className="mt-1 text-xs leading-5 text-muted-foreground">
                     Delivery estimates will be available at checkout.
                   </p>
@@ -286,9 +289,7 @@ export default function ProductPageComponent() {
                   ↺
                 </span>
                 <div>
-                  <p className="text-sm font-medium">
-                    Returns and exchanges
-                  </p>
+                  <p className="text-sm font-medium">Returns and exchanges</p>
                   <p className="mt-1 text-xs leading-5 text-muted-foreground">
                     Please review our return policy before purchasing.
                   </p>
